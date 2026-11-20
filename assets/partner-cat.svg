@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 64" width="110" height="64">
+  <!-- 复刻 WorkBuddy「伙伴」输入框右上角探头戴耳机呆萌黑白小猫贴纸 -->
+  <!-- 耳机头梁 -->
+  <path d="M22,38 C22,12 88,12 88,38" fill="none" stroke="#252836" stroke-width="6" stroke-linecap="round"/>
+  <!-- 左侧耳罩 -->
+  <rect x="12" y="28" width="12" height="22" rx="6" fill="#6374f7" stroke="#252836" stroke-width="3"/>
+  <!-- 右侧耳罩 -->
+  <rect x="86" y="28" width="12" height="22" rx="6" fill="#6374f7" stroke="#252836" stroke-width="3"/>
+  <!-- 猫耳 -->
+  <path d="M28,28 L24,9 L44,19 Z" fill="#ffffff" stroke="#252836" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M82,28 L86,9 L66,19 Z" fill="#ffffff" stroke="#252836" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M30,24 L28,14 L39,19 Z" fill="#fbcfe8"/>
+  <path d="M80,24 L82,14 L71,19 Z" fill="#fbcfe8"/>
+  <!-- 猫脑袋 -->
+  <path d="M23,54 C21,26 35,17 55,17 C75,17 89,26 87,54 Z" fill="#ffffff" stroke="#252836" stroke-width="3" stroke-linejoin="round"/>
+  <!-- 黑白科技感护目镜眼罩 -->
+  <rect x="32" y="30" width="46" height="19" rx="9.5" fill="#1e2230"/>
+  <!-- 发光蓝紫小眼睛 -->
+  <ellipse cx="45" cy="39.5" rx="4.2" ry="5.2" fill="#8fa8ff"/>
+  <ellipse cx="65" cy="39.5" rx="4.2" ry="5.2" fill="#8fa8ff"/>
+  <circle cx="46.5" cy="37.5" r="1.6" fill="#ffffff"/>
+  <circle cx="66.5" cy="37.5" r="1.6" fill="#ffffff"/>
+  <!-- 趴在输入框边缘的一对小爪子 -->
+  <ellipse cx="32" cy="54" rx="10" ry="6.5" fill="#ffffff" stroke="#252836" stroke-width="3"/>
+  <ellipse cx="78" cy="54" rx="10" ry="6.5" fill="#ffffff" stroke="#252836" stroke-width="3"/>
+</svg>

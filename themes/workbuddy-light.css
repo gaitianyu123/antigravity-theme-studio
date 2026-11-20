@@ -1,0 +1,243 @@
+/* ============================================================================
+ * Antigravity 2.0 主题：WorkBuddy 经典白 (WorkBuddy Light)
+ * 风格：腾讯 WorkBuddy / TDesign 极简效率工作台美学
+ * 特点：清爽微灰侧边栏 + 纯净白画布 + 腾讯科技蓝交互高光 + 高信息密度舒适排版
+ * 建议搭配客户端外观模式：浅色模式 (Light)
+ * ============================================================================ */
+
+:root {
+  color-scheme: light;
+
+  /* WorkBuddy 核心色板 (TDesign 中性灰阶 + 科技蓝) */
+  --agy-bg-base: #ffffff;
+  --agy-bg-elevated: #fafbfd;
+  --agy-bg-sidebar: #f4f6f9;
+  --agy-bg-input: #ffffff;
+  --agy-bg-code: #f6f8fb;
+  --agy-bg-hover: rgba(0, 82, 217, 0.06);
+
+  --agy-text-primary: #181c24;
+  --agy-text-secondary: #4e5969;
+  --agy-text-muted: #86909c;
+
+  --agy-accent: #0052d9;
+  --agy-accent-2: #266fe8;
+  --agy-accent-soft: rgba(0, 82, 217, 0.09);
+  --agy-accent-glow: rgba(0, 82, 217, 0.18);
+
+  --agy-border: #e5e8ef;
+  --agy-border-strong: rgba(0, 82, 217, 0.45);
+  --agy-radius: 12px;
+  --agy-font-sans: "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei UI", "Inter", system-ui, sans-serif;
+  --agy-font-mono: "JetBrains Mono", "Cascadia Code", "Fira Code", Consolas, monospace;
+
+  /* 前端语义变量全域覆盖（防客户端版本更新失效） */
+  --background: var(--agy-bg-base);
+  --foreground: var(--agy-text-primary);
+  --surface: var(--agy-bg-elevated);
+  --card: var(--agy-bg-elevated);
+  --card-foreground: var(--agy-text-primary);
+  --popover: #ffffff;
+  --popover-foreground: var(--agy-text-primary);
+  --primary: var(--agy-accent);
+  --primary-foreground: #ffffff;
+  --secondary: #eef2f8;
+  --secondary-foreground: var(--agy-text-primary);
+  --muted: #f2f4f8;
+  --muted-foreground: var(--agy-text-secondary);
+  --accent: var(--agy-accent-soft);
+  --accent-foreground: var(--agy-accent);
+  --border: var(--agy-border);
+  --input: var(--agy-bg-input);
+  --ring: var(--agy-accent);
+}
+
+/* 全局基础画布与字体抗锯齿 */
+html,
+body {
+  background-color: var(--agy-bg-base) !important;
+  background-image: none !important;
+  color: var(--agy-text-primary) !important;
+  font-family: var(--agy-font-sans) !important;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 顶部标题栏：克制白底 + 1px 清晰分隔线 */
+header,
+[role="banner"],
+[class*="titlebar"],
+[class*="TitleBar"] {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid var(--agy-border) !important;
+  color: var(--agy-text-primary) !important;
+}
+
+/* 左侧工作台导航栏：WorkBuddy 标志性柔和浅灰蓝底 */
+aside,
+nav,
+[role="navigation"],
+[data-sidebar],
+[class*="sidebar"],
+[class*="Sidebar"] {
+  background: var(--agy-bg-sidebar) !important;
+  border-color: var(--agy-border) !important;
+  color: var(--agy-text-primary) !important;
+}
+
+/* 左侧菜单项悬停与选中态（TDesign 圆润胶囊） */
+aside button,
+nav button,
+[role="navigation"] a {
+  border-radius: 8px !important;
+  transition: background-color 0.14s ease, color 0.14s ease, border-color 0.14s ease !important;
+}
+
+aside button:hover,
+nav button:hover,
+[role="navigation"] a:hover,
+[role="listitem"]:hover {
+  background-color: var(--agy-bg-hover) !important;
+}
+
+aside [aria-current="page"],
+aside [aria-selected="true"],
+nav [aria-current="page"],
+[role="tab"][aria-selected="true"] {
+  background-color: var(--agy-accent-soft) !important;
+  color: var(--agy-accent) !important;
+  font-weight: 600 !important;
+}
+
+/* 主对话画布 */
+main,
+[role="main"] {
+  background-color: var(--agy-bg-base) !important;
+}
+
+/* 输入框与底部 WorkBuddy 工作台输入胶囊 */
+textarea,
+input[type="text"],
+input[type="search"],
+[contenteditable="true"],
+[role="textbox"] {
+  background-color: var(--agy-bg-input) !important;
+  color: var(--agy-text-primary) !important;
+  border-color: var(--agy-border) !important;
+  caret-color: var(--agy-accent) !important;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease !important;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="search"]:focus,
+[contenteditable="true"]:focus,
+[role="textbox"]:focus {
+  border-color: var(--agy-accent) !important;
+  box-shadow: 0 0 0 3px var(--agy-accent-soft) !important;
+  outline: none !important;
+}
+
+form:has(textarea),
+form:has([contenteditable="true"]),
+[class*="composer"],
+[class*="Composer"],
+[class*="input-container"],
+[class*="InputContainer"] {
+  background: #ffffff !important;
+  border: 1px solid #d9dfe9 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 6px 24px -10px rgba(24, 28, 36, 0.10), 0 1px 3px rgba(24, 28, 36, 0.04) !important;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease !important;
+}
+
+form:has(textarea):focus-within,
+form:has([contenteditable="true"]):focus-within,
+[class*="composer"]:focus-within,
+[class*="Composer"]:focus-within {
+  border-color: var(--agy-accent) !important;
+  box-shadow: 0 0 0 3px var(--agy-accent-soft), 0 10px 28px -12px rgba(0, 82, 217, 0.18) !important;
+}
+
+/* 链接颜色 */
+a {
+  color: var(--agy-accent) !important;
+}
+a:hover {
+  color: #003cab !important;
+}
+
+/* 代码块：清爽淡灰卡片 + 极细边框 */
+pre {
+  background: var(--agy-bg-code) !important;
+  border: 1px solid var(--agy-border) !important;
+  border-radius: 10px !important;
+  color: #1f2937 !important;
+}
+
+pre,
+code {
+  font-family: var(--agy-font-mono) !important;
+}
+
+:not(pre) > code {
+  background: #eef3fc !important;
+  color: #0047bd !important;
+  border: 1px solid rgba(0, 82, 217, 0.14) !important;
+  border-radius: 5px !important;
+  padding: 0.1em 0.36em !important;
+}
+
+/* 引用块与表格 */
+blockquote {
+  border-left: 3px solid var(--agy-accent) !important;
+  background: #f5f8ff !important;
+  border-radius: 0 8px 8px 0 !important;
+  color: var(--agy-text-secondary) !important;
+}
+
+table,
+th,
+td {
+  border-color: var(--agy-border) !important;
+}
+th {
+  background: #f4f6fa !important;
+  color: var(--agy-text-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* 弹窗、设置浮层与下拉菜单 */
+[role="dialog"],
+[role="menu"],
+[role="listbox"],
+[data-radix-popper-content-wrapper] > div {
+  background: #ffffff !important;
+  border: 1px solid var(--agy-border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 16px 40px -10px rgba(24, 28, 36, 0.14), 0 2px 6px rgba(24, 28, 36, 0.05) !important;
+}
+
+/* 文本反选高亮 */
+::selection {
+  background: rgba(0, 82, 217, 0.18) !important;
+  color: #002e7a !important;
+}
+
+/* 极简滚动条 */
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(134, 144, 156, 0.32) !important;
+  border-radius: 999px !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 82, 217, 0.48) !important;
+}

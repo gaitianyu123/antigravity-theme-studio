@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antigravity 2.0 · WorkBuddy 主图主题全真预览</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei UI", system-ui, sans-serif;
+      background: #ffffff;
+      color: #181c24;
+      padding: 24px 36px 40px;
+    }
+    .container { max-width: 1020px; margin: 0 auto; }
+
+    /* 顶部超大圆角 WorkBuddy 主图舞台（100% 复刻截图） */
+    .stage {
+      position: relative;
+      border-radius: 22px;
+      background: #c5d6ff;
+      padding: 36px 76px 0;
+      height: 460px;
+      overflow: hidden;
+      transition: background 0.25s ease;
+    }
+    .stage-badge {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      background: rgba(74, 83, 102, 0.72);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+    }
+    .mock-window {
+      width: 100%;
+      height: 100%;
+      border-radius: 16px 16px 0 0;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 196px 1fr;
+      box-shadow: 0 20px 50px rgba(34, 48, 92, 0.16);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-image 0.25s ease;
+    }
+    .mock-sidebar {
+      padding: 14px 12px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-right: 1px solid rgba(145, 164, 232, 0.24);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .traffic { display: flex; gap: 6px; margin-bottom: 10px; }
+    .dot { width: 9px; height: 9px; border-radius: 50%; }
+    .sb-item {
+      padding: 7px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      color: inherit;
+      opacity: 0.85;
+    }
+    .sb-item.active {
+      opacity: 1;
+      font-weight: 600;
+    }
+    .mock-main {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 36px 42px;
+    }
+    .hero-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .mode-pills {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .mode-pill {
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(145, 164, 232, 0.25);
+    }
+    .mode-pill.active {
+      color: #fff;
+      border-color: transparent;
+    }
+    .composer-box {
+      position: relative;
+      width: 100%;
+      max-width: 470px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1.5px solid #cfdafe;
+      box-shadow: 0 12px 28px -10px rgba(91, 108, 249, 0.22);
+      padding: 14px 16px 10px;
+    }
+    .cat-sticker {
+      position: absolute;
+      top: -42px;
+      right: 20px;
+      width: 78px;
+      height: 46px;
+      display: none;
+      pointer-events: none;
+    }
+    .composer-box textarea {
+      width: 100%;
+      height: 52px;
+      border: none;
+      outline: none;
+      resize: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 13px;
+      color: inherit;
+    }
+    .composer-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 8px;
+      border-top: 1px solid rgba(145, 164, 232, 0.2);
+      font-size: 11px;
+      opacity: 0.75;
+    }
+    .send-dot {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* 下半区「全部主题」5 列缩略图网格 */
+    .sec-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 26px 0 14px;
+    }
+    .sec-head h2 { margin: 0; font-size: 17px; }
+    .lang-btn {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid #d5ddf0;
+      background: #f5f8ff;
+      color: #4353d9;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+    .tile {
+      cursor: pointer;
+      text-align: center;
+    }
+    .tile-img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2.5px solid #e5e8ef;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+      background: #f3f4f6;
+    }
+    .tile:hover .tile-img { transform: translateY(-2px); }
+    .tile.active .tile-img {
+      border-color: #181c24;
+      box-shadow: 0 6px 16px rgba(24, 28, 36, 0.12);
+    }
+    .tile-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .tile-name {
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #1f2937;
+    }
+    .tile.active .tile-name { font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="stage" id="stage">
+      <div class="stage-badge" id="stage-badge">永久有效</div>
+      <div class="mock-window" id="mock-window">
+        <div class="mock-sidebar" id="mock-sidebar">
+          <div class="traffic">
+            <span class="dot" style="background:#ff5f56"></span>
+            <span class="dot" style="background:#ffbd2e"></span>
+            <span class="dot" style="background:#27c93f"></span>
+          </div>
+          <div class="sb-item active" id="sb-active" data-en="New Conversation" data-zh="新建对话">新建对话</div>
+          <div class="sb-item" data-en="Projects" data-zh="项目空间">项目空间</div>
+          <div class="sb-item" data-en="Scheduled Tasks" data-zh="定时任务">定时任务</div>
+          <div class="sb-item" data-en="Skills & Customizations" data-zh="技能与自定义">技能与自定义</div>
+          <div class="sb-item" data-en="Plugins Manager" data-zh="插件管理">插件管理</div>
+          <div class="sb-item" data-en="Settings" data-zh="系统设置">系统设置</div>
+        </div>
+        <div class="mock-main" id="mock-main">
+          <div class="hero-title" id="hero-title">Antigravity, 我帮你</div>
+          <div class="mode-pills">
+            <span class="mode-pill active" id="pill-active" data-en="Agent Mode" data-zh="智能体模式">智能体模式</span>
+            <span class="mode-pill" data-en="Plan Mode" data-zh="规划模式">规划模式</span>
+            <span class="mode-pill" data-en="Auto Sync" data-zh="随端更新">随端更新</span>
+          </div>
+          <div class="composer-box" id="composer-box">
+            <img class="cat-sticker" id="cat-sticker" src="./assets/partner-cat.svg" alt="cat" />
+            <textarea id="demo-input" placeholder="输入任何问题，或按 / 调用命令、@ 引用上下文..."></textarea>
+            <div class="composer-foot">
+              <span data-en="Tool Policy: Always Proceed" data-zh="执行策略：始终自动执行">执行策略：始终自动执行</span>
+              <button class="send-dot" id="send-dot">↑</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-head">
+      <h2>全部主题</h2>
+      <button class="lang-btn" id="lang-btn">中文汉化：已开启（点此切换对照）</button>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <script>
+    const THEMES = [
+      { id: "wb-light", name: "浅色", mode: "light", stageBg: "#e7eefc", accent: "#0052d9", sidebarBg: "rgba(244,246,249,0.92)", activeBg: "#dce8ff", activeColor: "#0052d9", bgImg: "", bgColor: "#ffffff", thumb: "./assets/thumbs/wb-light.png" },
+      { id: "wb-dark", name: "深色", mode: "dark", stageBg: "#242936", accent: "#4e8bff", sidebarBg: "rgba(19,21,26,0.92)", activeBg: "rgba(78,139,255,0.22)", activeColor: "#93bcff", bgImg: "", bgColor: "#181a1f", thumb: "./assets/thumbs/wb-dark.png" },
+      { id: "wb-system", name: "跟随系统", mode: "light", stageBg: "#dce5f7", accent: "#0052d9", sidebarBg: "rgba(244,246,249,0.92)", activeBg: "#dce8ff", activeColor: "#0052d9", bgImg: "", bgColor: "#ffffff", thumb: "./assets/thumbs/wb-system.png" },
+      { id: "wb-breeze", name: "有风", mode: "light", stageBg: "#d5f0e2", accent: "#2f855a", sidebarBg: "rgba(240,249,244,0.82)", activeBg: "rgba(47,133,90,0.18)", activeColor: "#1e603f", bgImg: "./assets/breeze.jpg", bgColor: "#f2faff", thumb: "./assets/thumbs/wb-breeze.png" },
+      { id: "wb-penguin", name: "经典萌企", mode: "light", stageBg: "#d7e8ff", accent: "#1283f6", sidebarBg: "rgba(244,248,255,0.86)", activeBg: "rgba(18,131,246,0.16)", activeColor: "#0b65c2", bgImg: "./assets/classic-penguin.jpg", bgColor: "#ffffff", thumb: "./assets/thumbs/wb-penguin.png" },
+      { id: "wb-companion", name: "同行", mode: "light", stageBg: "#c8eef5", accent: "#0ea5b7", sidebarBg: "rgba(226,247,251,0.78)", activeBg: "rgba(14,165,183,0.18)", activeColor: "#097280", bgImg: "./assets/companion.jpg", bgColor: "#e7f8fb", thumb: "./assets/thumbs/wb-companion.png" },
+      { id: "wb-ripple", name: "涟漪", mode: "light", stageBg: "#c9dfff", accent: "#4a7fe0", sidebarBg: "rgba(227,239,255,0.78)", activeBg: "rgba(74,127,224,0.18)", activeColor: "#2756ad", bgImg: "./assets/ripple.svg", bgColor: "#dcebff", thumb: "./assets/thumbs/wb-ripple.png" },
+      { id: "wb-partner", name: "伙伴", mode: "light", stageBg: "#c5d6ff", accent: "#5b6cf9", sidebarBg: "rgba(235,241,255,0.84)", activeBg: "#c8d7fc", activeColor: "#25348b", bgImg: "./assets/partner.svg", bgColor: "#f9fbff", thumb: "./assets/thumbs/wb-partner.png", hasCat: true }
+    ];
+
+    const stage = document.getElementById("stage");
+    const mockWindow = document.getElementById("mock-window");
+    const mockSidebar = document.getElementById("mock-sidebar");
+    const sbActive = document.getElementById("sb-active");
+    const pillActive = document.getElementById("pill-active");
+    const composerBox = document.getElementById("composer-box");
+    const catSticker = document.getElementById("cat-sticker");
+    const sendDot = document.getElementById("send-dot");
+    const grid = document.getElementById("grid");
+    const langBtn = document.getElementById("lang-btn");
+    const demoInput = document.getElementById("demo-input");
+    let zhOn = true;
+
+    function selectTheme(id) {
+      const t = THEMES.find(x => x.id === id) || THEMES[THEMES.length - 1];
+      const dark = t.mode === "dark";
+      stage.style.background = t.stageBg;
+      mockWindow.style.backgroundColor = t.bgColor;
+      mockWindow.style.backgroundImage = t.bgImg ? `url("${t.bgImg}")` : "none";
+      mockWindow.style.color = dark ? "#f1f4f9" : "#1c2233";
+      mockSidebar.style.background = t.sidebarBg;
+      sbActive.style.background = t.activeBg;
+      sbActive.style.color = t.activeColor;
+      pillActive.style.background = t.accent;
+      sendDot.style.background = t.accent;
+      composerBox.style.background = dark ? "rgba(32,35,42,0.92)" : "rgba(255,255,255,0.92)";
+      composerBox.style.borderColor = dark ? "#384152" : "#cfdafe";
+      catSticker.style.display = t.hasCat ? "block" : "none";
+
+      document.querySelectorAll(".tile").forEach(el => {
+        el.classList.toggle("active", el.dataset.id === t.id);
+      });
+    }
+
+    THEMES.forEach(t => {
+      const div = document.createElement("div");
+      div.className = "tile";
+      div.dataset.id = t.id;
+      div.innerHTML = `<div class="tile-img"><img src="${t.thumb}" alt="${t.name}"></div><div class="tile-name">${t.name}</div>`;
+      div.onclick = () => selectTheme(t.id);
+      grid.appendChild(div);
+    });
+
+    langBtn.onclick = () => {
+      zhOn = !zhOn;
+      langBtn.textContent = zhOn ? "中文汉化：已开启（点此切换对照）" : "中文汉化：已关闭（当前原英文）";
+      document.querySelectorAll("[data-en][data-zh]").forEach(el => {
+        el.textContent = zhOn ? el.dataset.zh : el.dataset.en;
+      });
+      demoInput.placeholder = zhOn
+        ? "输入任何问题，或按 / 调用命令、@ 引用上下文..."
+        : "Ask anything... Type / for commands, @ to mention";
+    };
+
+    selectTheme("wb-partner");
+  </script>
+</body>
+</html>

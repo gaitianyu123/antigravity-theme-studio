@@ -1,0 +1,8 @@
+{
+  "antigravity_exe": "",
+  "debug_port": 9222,
+  "active_theme": "wb-partner",
+  "enable_zh_cn": true,
+  "auto_follow_client_updates": true,
+  "auto_watch_interval_sec": 2.0
+}

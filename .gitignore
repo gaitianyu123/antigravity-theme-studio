@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+logs/
+*.log
+*.pid
+client_version_state.json
+i18n/discovered_new_ui_terms.json
+.DS_Store
+Thumbs.db

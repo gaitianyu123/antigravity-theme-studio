@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f9fbff"/>
+      <stop offset="60%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f5f8ff"/>
+    </linearGradient>
+    <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b7cf6"/>
+      <stop offset="100%" stop-color="#5e72f6"/>
+    </linearGradient>
+    <linearGradient id="planetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#6d5ef7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 纯净中央留白画布 -->
+  <rect width="1600" height="900" fill="url(#bgGrad)"/>
+
+  <!-- 底部左右柔和浅蓝云丘 -->
+  <path d="M0,900 L0,842 Q120,810 245,846 Q350,872 470,900 Z" fill="#e8efff" opacity="0.88"/>
+  <path d="M1080,900 Q1240,835 1410,858 Q1515,870 1600,832 L1600,900 Z" fill="#eaf0ff" opacity="0.82"/>
+
+  <!-- 左上角：紫色小土星 -->
+  <g transform="translate(88, 72) rotate(-14)">
+    <ellipse cx="0" cy="0" rx="52" ry="14" fill="none" stroke="#312e81" stroke-width="3.2"/>
+    <circle cx="0" cy="0" r="26" fill="url(#planetGrad)" stroke="#23223b" stroke-width="3.2"/>
+    <path d="M-49,3 A52,14 0 0,0 49,3" fill="none" stroke="#c4b5fd" stroke-width="5" stroke-linecap="round"/>
+    <path d="M-50,3 A52,14 0 0,0 50,3" fill="none" stroke="#23223b" stroke-width="2.6" stroke-linecap="round"/>
+    <circle cx="-8" cy="-8" r="4.5" fill="#ddd6fe" opacity="0.85"/>
+  </g>
+
+  <!-- 左侧边缘：探出的创意彩铅笔尖 -->
+  <g transform="translate(0, 290) rotate(-10)">
+    <polygon points="0,-24 44,0 0,24" fill="#fde68a" stroke="#23223b" stroke-width="3.2" stroke-linejoin="round"/>
+    <polygon points="28,-9 44,0 28,9" fill="#23223b"/>
+    <rect x="-26" y="-24" width="28" height="48" fill="#7c8cf8" stroke="#23223b" stroke-width="3.2"/>
+  </g>
+
+  <!-- 右上角：金色手绘八角小星星 + 飘逸蓝紫丝带 + 持画笔调色盘飞翔小画师 -->
+  <g transform="translate(1152, 74)">
+    <path d="M0,-24 L6,-8 L22,-10 L10,3 L18,19 L2,10 L-10,22 L-8,6 L-24,0 L-8,-6 Z"
+          fill="#fbbf24" stroke="#f59e0b" stroke-width="1.5" stroke-linejoin="round"/>
+  </g>
+
+  <!-- 右上角淡蓝云朵与动态紫蓝丝带 -->
+  <g transform="translate(1195, 18)">
+    <path d="M315,15 C345,-5 385,5 405,30 L405,110 C365,125 320,108 308,76 C285,58 292,26 315,15 Z" fill="#dbe8ff" opacity="0.72"/>
+    <!-- 动感紫色飘带 -->
+    <path d="M398,198 C332,202 276,174 222,142 C170,111 112,118 96,154 C85,178 106,204 134,195 C154,189 162,171 149,158 C164,142 198,148 232,174 C282,212 342,238 405,232 Z"
+          fill="url(#ribbonGrad)"/>
+    <!-- 飞翔的小画师角色 -->
+    <g transform="translate(198, 42)">
+      <!-- 伸展腿与鞋 -->
+      <path d="M44,108 L14,132 L26,142 L58,118 Z" fill="#3b4cca" stroke="#23223b" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M62,108 L88,136 L100,126 L72,100 Z" fill="#3b4cca" stroke="#23223b" stroke-width="3" stroke-linejoin="round"/>
+      <ellipse cx="14" cy="139" rx="11" ry="6" fill="#23223b" transform="rotate(-24 14 139)"/>
+      <ellipse cx="98" cy="133" rx="11" ry="6" fill="#23223b" transform="rotate(28 98 133)"/>
+      <!-- 黄色针织毛衣上身 -->
+      <path d="M36,62 Q58,52 78,66 L74,110 L36,110 Z" fill="#fde047" stroke="#23223b" stroke-width="3" stroke-linejoin="round"/>
+      <!-- 挥画笔的左手臂 -->
+      <path d="M40,68 L6,44 L15,34 L48,58 Z" fill="#fde047" stroke="#23223b" stroke-width="3" stroke-linejoin="round"/>
+      <!-- 画笔 -->
+      <line x1="12" y1="44" x2="-18" y2="2" stroke="#92400e" stroke-width="5.5" stroke-linecap="round"/>
+      <path d="M-18,2 C-28,-8 -25,-22 -14,-24 C-10,-12 -10,-4 -18,2 Z" fill="#ef4444" stroke="#23223b" stroke-width="2.2"/>
+      <!-- 托调色盘的右手臂 -->
+      <path d="M74,72 L106,82 L101,94 L70,84 Z" fill="#fde047" stroke="#23223b" stroke-width="3" stroke-linejoin="round"/>
+      <!-- 调色盘 -->
+      <g transform="translate(112, 82) rotate(-14)">
+        <ellipse cx="0" cy="0" rx="22" ry="15" fill="#fef3c7" stroke="#23223b" stroke-width="2.6"/>
+        <circle cx="-9" cy="-4" r="3.4" fill="#ef4444"/>
+        <circle cx="0" cy="-7" r="3.4" fill="#3b82f6"/>
+        <circle cx="9" cy="-2" r="3.4" fill="#22c55e"/>
+        <circle cx="3" cy="6" r="3.4" fill="#a855f7"/>
+      </g>
+      <!-- 笑脸与卷发头部 -->
+      <circle cx="62" cy="38" r="20" fill="#fed7aa" stroke="#23223b" stroke-width="3"/>
+      <path d="M42,36 C38,16 58,8 76,16 C86,21 86,35 78,42 C76,28 60,26 42,36 Z" fill="#23223b"/>
+      <circle cx="54" cy="39" r="2.2" fill="#23223b"/>
+      <circle cx="66" cy="40" r="2.2" fill="#23223b"/>
+      <path d="M56,47 Q61,51 66,47" fill="none" stroke="#23223b" stroke-width="2.2" stroke-linecap="round"/>
+    </g>
+    <!-- 右侧飘散彩色小点缀 -->
+    <circle cx="382" cy="278" r="4.5" fill="#f97316" opacity="0.75"/>
+    <path d="M366,315 Q382,306 396,318" fill="none" stroke="#f97316" stroke-width="3.5" stroke-linecap="round" opacity="0.65"/>
+  </g>
+
+  <!-- 右下角：鲜艳红花绿叶 + 抱着大铅笔的粉色小姑娘 -->
+  <g transform="translate(1320, 560)">
+    <!-- 大绿叶 -->
+    <path d="M126,185 C82,126 30,126 18,154 C42,188 86,204 126,185 Z" fill="#22c55e" stroke="#23223b" stroke-width="3.2" stroke-linejoin="round"/>
+    <path d="M150,248 C186,182 238,176 266,204 C244,242 198,262 150,248 Z" fill="#16a34a" stroke="#23223b" stroke-width="3.2" stroke-linejoin="round"/>
+    <!-- 茎干 -->
+    <path d="M174,340 Q156,220 198,108" fill="none" stroke="#15803d" stroke-width="8" stroke-linecap="round"/>
+    <!-- 珊瑚大红花朵 -->
+    <g transform="translate(216, 102)">
+      <circle cx="0" cy="-34" r="28" fill="#ef4444" stroke="#23223b" stroke-width="3"/>
+      <circle cx="34" cy="-8" r="28" fill="#ef4444" stroke="#23223b" stroke-width="3"/>
+      <circle cx="22" cy="30" r="28" fill="#ef4444" stroke="#23223b" stroke-width="3"/>
+      <circle cx="-22" cy="30" r="28" fill="#ef4444" stroke="#23223b" stroke-width="3"/>
+      <circle cx="-34" cy="-8" r="28" fill="#ef4444" stroke="#23223b" stroke-width="3"/>
+      <circle cx="0" cy="4" r="18" fill="#fbbf24" stroke="#23223b" stroke-width="3"/>
+    </g>
+    <!-- 抱铅笔的小女孩 -->
+    <g transform="translate(28, 178)">
+      <!-- 大黄铅笔 -->
+      <rect x="6" y="34" width="24" height="128" fill="#facc15" stroke="#23223b" stroke-width="3.2" rx="3"/>
+      <polygon points="6,34 18,4 30,34" fill="#fde68a" stroke="#23223b" stroke-width="3.2" stroke-linejoin="round"/>
+      <polygon points="13,16 18,4 23,16" fill="#23223b"/>
+      <!-- 粉色卫衣与手臂 -->
+      <path d="M32,88 Q68,78 96,102 L106,162 L24,162 Z" fill="#f472b6" stroke="#23223b" stroke-width="3.2" stroke-linejoin="round"/>
+      <ellipse cx="32" cy="116" rx="16" ry="11" fill="#fed7aa" stroke="#23223b" stroke-width="3"/>
+      <!-- 头部与丸子头 -->
+      <circle cx="96" cy="56" r="15" fill="#23223b"/>
+      <circle cx="68" cy="64" r="24" fill="#fed7aa" stroke="#23223b" stroke-width="3.2"/>
+      <path d="M44,62 C44,36 86,34 94,58 C84,48 58,48 44,62 Z" fill="#23223b"/>
+      <circle cx="57" cy="65" r="2.5" fill="#23223b"/>
+      <circle cx="71" cy="66" r="2.5" fill="#23223b"/>
+      <path d="M59,74 Q64,79 70,74" fill="none" stroke="#23223b" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="51" cy="71" r="3.8" fill="#fb7185" opacity="0.55"/>
+    </g>
+  </g>
+
+  <!-- 底部居中偏右小金花微点缀 -->
+  <g transform="translate(1152, 886)">
+    <circle cx="-12" cy="0" r="12" fill="#facc15"/>
+    <circle cx="12" cy="0" r="12" fill="#facc15"/>
+    <circle cx="0" cy="-10" r="12" fill="#facc15"/>
+    <circle cx="0" cy="2" r="7" fill="#f97316"/>
+  </g>
+</svg>

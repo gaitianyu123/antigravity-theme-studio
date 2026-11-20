@@ -1,0 +1,3 @@
+# 核心热切换引擎 (theme_engine.py) 零外部依赖，仅需 Python 3.9+ 标准库。
+# 如需使用图形界面缩略图面板 (theme_gui.py) 与「+ 自定义主图」导入功能，安装 Pillow 即可：
+Pillow>=10.0.0

@@ -1,0 +1,124 @@
+/* ============================================================================
+ * Antigravity 2.0 主题：涟漪 (WorkBuddy Ripple 复刻版)
+ * 特色：静谧柔蓝湖面水波涟漪 + 左上轻舟 + 右下安睡白猫主图
+ * ============================================================================ */
+
+:root {
+  color-scheme: light;
+
+  --agy-bg-base: #dcebff;
+  --agy-bg-elevated: rgba(255, 255, 255, 0.80);
+  --agy-bg-sidebar: rgba(227, 239, 255, 0.78);
+  --agy-bg-input: rgba(255, 255, 255, 0.90);
+  --agy-bg-code: rgba(242, 247, 255, 0.92);
+  --agy-bg-hover: rgba(74, 127, 224, 0.10);
+
+  --agy-text-primary: #1a2842;
+  --agy-text-secondary: #485b7c;
+  --agy-text-muted: #7b8fae;
+
+  --agy-accent: #4a7fe0;
+  --agy-accent-2: #6b99f0;
+  --agy-accent-soft: rgba(74, 127, 224, 0.15);
+  --agy-accent-glow: rgba(74, 127, 224, 0.24);
+
+  --agy-border: rgba(74, 127, 224, 0.22);
+  --agy-border-strong: rgba(74, 127, 224, 0.56);
+  --agy-radius: 14px;
+  --agy-font-sans: "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei UI", system-ui, sans-serif;
+  --agy-font-mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+
+  --background: transparent;
+  --foreground: var(--agy-text-primary);
+  --surface: var(--agy-bg-elevated);
+  --card: var(--agy-bg-elevated);
+  --card-foreground: var(--agy-text-primary);
+  --popover: rgba(255, 255, 255, 0.95);
+  --popover-foreground: var(--agy-text-primary);
+  --primary: var(--agy-accent);
+  --primary-foreground: #ffffff;
+  --secondary: rgba(226, 238, 255, 0.85);
+  --secondary-foreground: var(--agy-text-primary);
+  --muted: rgba(232, 241, 255, 0.72);
+  --muted-foreground: var(--agy-text-secondary);
+  --accent: var(--agy-accent-soft);
+  --accent-foreground: #2e60bd;
+  --border: var(--agy-border);
+  --input: var(--agy-bg-input);
+  --ring: var(--agy-accent);
+}
+
+html,
+body {
+  background-color: var(--agy-bg-base) !important;
+  background-image: url("{{ASSET:ripple.svg}}") !important;
+  background-size: cover !important;
+  background-position: center bottom !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  color: var(--agy-text-primary) !important;
+  font-family: var(--agy-font-sans) !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root, #app, main, [role="main"] { background-color: transparent !important; }
+
+header, [role="banner"], [class*="titlebar"], [class*="TitleBar"] {
+  background: rgba(236, 244, 255, 0.74) !important;
+  backdrop-filter: blur(14px) !important;
+  border-bottom: 1px solid var(--agy-border) !important;
+}
+
+aside, nav, [role="navigation"], [data-sidebar], [class*="sidebar"], [class*="Sidebar"] {
+  background: var(--agy-bg-sidebar) !important;
+  backdrop-filter: blur(16px) !important;
+  border-color: var(--agy-border) !important;
+}
+
+aside button:hover, nav button:hover, [role="navigation"] a:hover, [role="listitem"]:hover {
+  background-color: var(--agy-bg-hover) !important;
+}
+
+aside [aria-current="page"], aside [aria-selected="true"], [role="tab"][aria-selected="true"] {
+  background-color: rgba(74, 127, 224, 0.18) !important;
+  color: #2756ad !important;
+  font-weight: 600 !important;
+}
+
+form:has(textarea), form:has([contenteditable="true"]), [class*="composer"], [class*="Composer"] {
+  background: rgba(255, 255, 255, 0.86) !important;
+  backdrop-filter: blur(14px) !important;
+  border: 1.5px solid rgba(74, 127, 224, 0.28) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 30px -14px rgba(52, 95, 178, 0.20) !important;
+}
+
+textarea, input[type="text"], input[type="search"], [contenteditable="true"], [role="textbox"] {
+  background-color: var(--agy-bg-input) !important;
+  color: var(--agy-text-primary) !important;
+  border-color: var(--agy-border) !important;
+  caret-color: var(--agy-accent) !important;
+}
+
+textarea:focus, input[type="text"]:focus, [contenteditable="true"]:focus {
+  border-color: var(--agy-accent) !important;
+  box-shadow: 0 0 0 3px var(--agy-accent-soft) !important;
+  outline: none !important;
+}
+
+a { color: #3669c9 !important; }
+pre { background: var(--agy-bg-code) !important; border: 1px solid var(--agy-border) !important; border-radius: 12px !important; }
+pre, code { font-family: var(--agy-font-mono) !important; }
+:not(pre) > code { background: rgba(74, 127, 224, 0.12) !important; color: #2b5cb8 !important; border-radius: 6px !important; padding: 0.1em 0.36em !important; }
+blockquote { border-left: 3px solid var(--agy-accent) !important; background: rgba(74, 127, 224, 0.08) !important; border-radius: 0 10px 10px 0 !important; }
+
+[role="dialog"], [role="menu"], [role="listbox"], [data-radix-popper-content-wrapper] > div {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid var(--agy-border) !important;
+  border-radius: 14px !important;
+}
+
+::selection { background: rgba(74, 127, 224, 0.24) !important; color: #163063 !important; }
+::-webkit-scrollbar { width: 6px !important; height: 6px !important; }
+::-webkit-scrollbar-thumb { background: rgba(74, 127, 224, 0.28) !important; border-radius: 999px !important; }
